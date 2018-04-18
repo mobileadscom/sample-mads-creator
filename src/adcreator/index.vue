@@ -15,6 +15,8 @@ import StepsBox from './containers/StepsBox'
 import htmlAd, { htmlExtra } from './HTMLAd'
 import imageAd from './ImageAd'
 
+import { NEXT_STEP } from '@/store/mutations'
+
 export default {
   components: {
     WorkspaceBox,
@@ -25,15 +27,17 @@ export default {
   },
   data () {
     return {
-      type: 'html',
-      step: 0
+      type: 'html'
+    }
+  },
+  computed: {
+    step() {
+      return this.$store.getters.step
     }
   },
   methods: {
     nextStep() {
-      if (this.step++ > 2) {
-        this.step = 0
-      }
+      this.$store.dispatch(NEXT_STEP)
     }
   }
 }
