@@ -1,5 +1,5 @@
 <template lang="html">
-  <h1>You're in Image Ad</h1>
+  <h1>campaign and advertiser select</h1>
 </template>
 
 <script>
